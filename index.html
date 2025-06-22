@@ -1,0 +1,210 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  body {
+    background: linear-gradient(to right, #e3ffe7, #d9e7ff);
+    color: #2b2b2b;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  [data-theme="dark"] body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #e0e0e0;
+  }
+  header {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+    padding: 100px 20px 60px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    color: #2575fc;
+    padding: 10px 16px;
+    border-radius: 50px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .toggle-btn:hover {
+    background-color: #dbeafe;
+  }
+  .toggle-icon {
+    font-size: 18px;
+  }
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+    display: inline-block;
+    max-width: 100%;
+  }
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  @keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+  }
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+  nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #ffd700;
+  }
+  .btn {
+    background-color: #fff;
+    color: #2575fc;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+  }
+  .btn:hover {
+    background-color: #e3f2fd;
+    transform: scale(1.05);
+  }
+  section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  h2 {
+    text-align: center;
+    color: #2575fc;
+    font-size: 2.2rem;
+    border-bottom: 2px solid #2575fc;
+    padding-bottom: 5px;
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+  .project-card {
+    background: #fff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+  [data-theme="dark"] .project-card {
+    background: #1f1f1f;
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme');
+    const btn = document.getElementById('theme-toggle-icon');
+    if (currentTheme === 'dark') {
+      html.setAttribute('data-theme', 'light');
+      btn.textContent = '☀️';
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙';
+    }
+  }
+</script>
+
+<header>
+  <button class="toggle-btn" onclick="toggleTheme()">
+    <span id="theme-toggle-icon" class="toggle-icon">🌙</span>
+    Toggle Mode
+  </button>
+  <img src="lohan.jpg" alt="Sachin Lohan" class="profile-img"/>
+  <h1>Hi 👋, I'm Sachin Lohan</h1>
+  <p>Frontend & Python Developer from India</p>
+  <a href="#contact" class="btn">Let's Connect</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="about">
+  <h2>👨‍💻 About Me</h2>
+  <p>Hello! I'm Sachin Lohan, a passionate Frontend and Python Developer from India. I specialize in building responsive and user-friendly web interfaces as well as Python-based GUI applications. I am enthusiastic about technology, love solving real-world problems through code, and continuously strive to learn and grow in the field of software development.</p>
+  <p>With a background in BCA and a strong grasp of programming fundamentals, I have developed multiple projects that reflect my skills and dedication. I enjoy working in creative environments and collaborating with others to bring ideas to life.</p>
+</section>
+
+<section id="skills">
+  <h2>💡 Skills</h2>
+  <ul>
+    <li><strong>Languages:</strong> Python, C, C++, Java, HTML, CSS, SQL, R (learning)</li>
+    <li><strong>Tools:</strong> VS Code, Git, Tkinter, PIL, RStudio</li>
+    <li><strong>Domains:</strong> Web Design, Image Processing, GUI Apps</li>
+  </ul>
+</section>
+
+<section id="projects">
+  <h2>🚀 Projects</h2>
+  <div class="project-card">
+    <h3>🖼️ Photo Editor App</h3>
+    <p>GUI image editor using Python, Tkinter, and PIL with features like crop, resize, and filters.</p>
+  </div>
+  <div class="project-card">
+    <h3>☀️ Weather App</h3>
+    <p>Real-time weather forecasting app using OpenWeather API and Python.</p>
+  </div>
+  <div class="project-card">
+    <h3>🌐 Personal Portfolio Website</h3>
+    <p>Portfolio designed using HTML and CSS to showcase projects and skills.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>📞 Contact Me</h2>
+  <p><strong>Email:</strong> <a href="mailto:lohansachin001@gmail.com">lohansachin001@gmail.com</a></p>
+  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sachin-lohan-293993302" target="_blank">sachin-lohan-293993302</a></p>
+  <p><strong>GitHub:</strong> <a href="https://github.com/lohan0108" target="_blank">lohan0108</a></p>
+</section>
